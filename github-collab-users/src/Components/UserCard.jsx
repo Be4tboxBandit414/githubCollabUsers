@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function UserCard(props) {
+  // Grab relevent data from props to display
   const { userId, avatar, login, contributions } = props;
+
+  // Renders
   return (
     <Link to={`/user-detail/${userId}`} state={props}>
       <li>

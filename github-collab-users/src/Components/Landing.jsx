@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import UserCard from "./UserCard";
 function Landing(props) {
+  // Grab passed data and 'setCurrentPage' from props. Data to pass to UserCard component. setCurrentPage to change 'currentPage'.
   const { data, setCurrentPage } = props;
+
+  // Renders
   return (
     <>
       <div className="pages-container">

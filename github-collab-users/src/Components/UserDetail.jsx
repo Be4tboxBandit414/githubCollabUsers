@@ -2,18 +2,22 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function UserDetail() {
+  // Grab data from state in Link. Store data in 'userData'.
   const location = useLocation();
   const data = location.state;
   const { login } = data;
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
+    // Fetch data for user via login id number and sets 'userData'.
     fetch(`https://api.github.com/users/${login}`)
       .then((res) => res.json())
       .then((resData) => {
         setUserData(resData);
       });
   }, [login]);
+
+  // Renders
   return (
     <div className="detail-container">
       <div className="image-container">

@@ -1,4 +1,8 @@
+/* Font Import: Montserrat */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* Landing Styles */
 
 .App {
   font-family: "Montserrat", sans-serif;
@@ -37,6 +41,8 @@ a {
   padding: 5px;
 }
 
+/* User Detail Styles */
+
 .detail-container {
   text-align: center;
 }
@@ -65,6 +71,14 @@ button {
   cursor: pointer;
 }
 
+.bio {
+  width: 30rem;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* UserCard Styles */
+
 .list-image-container {
   margin-right: 1rem;
 }
@@ -83,10 +97,4 @@ button {
 
 .info-container {
   margin-top: 12px;
-}
-
-.bio {
-  width: 30rem;
-  margin: 0 auto;
-  font-style: italic;
 }
