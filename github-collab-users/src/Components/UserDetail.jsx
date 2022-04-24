@@ -27,7 +27,7 @@ function UserDetail() {
       <div className="subcontainer">
         <div>Name: {userData.name}</div>
         <div>Username: {userData.login}</div>
-        <div> Location: {userData.location}</div>
+        <div>Location: {userData.location}</div>
         <div>Follower Count: {userData.followers}</div>
         <div>Following Count: {userData.following}</div>
         <div>Bio:</div>
