@@ -1,29 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import { useEffect } from 'react';
+import "./App.css";
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./Components/Landing";
+import UserDetail from "./Components/UserDetail";
+//import UserCard from "./Components/UserCard";
 
 function App() {
+  const [collabData, setCollabData] = useState([]);
   useEffect(() => {
-    fetch('https://api.github.com/repos/facebook/react/contributors')
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }, [])
+    fetch(
+      "https://api.github.com/repos/facebook/react/contributors?per_page=100&page=1"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setCollabData(data);
+      });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Testing
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Landing data={collabData} />} />
+        <Route path="/user-detail/:userId" element={<UserDetail />} />
+      </Routes>
     </div>
   );
 }
