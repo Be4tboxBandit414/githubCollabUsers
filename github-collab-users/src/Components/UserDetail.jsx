@@ -10,13 +10,15 @@ function UserDetail() {
 
   useEffect(() => {
     // Fetch data for user via login id number and sets 'userData'.
-    fetch(`https://api.github.com/users/${login}`)
-      .then((res) => res.json())
-      .then((resData) => {
-        setUserData(resData);
-      });
+    fetchDetailData();
   }, [login]);
 
+  // Async function to fetch detailed data on user with login id via github api and then sets user data for detail view
+  const fetchDetailData = async () => {
+    const detailRes = await fetch(`https://api.github.com/users/${login}`);
+    const detailData = await detailRes.json();
+    setUserData(detailData);
+  };
   // Renders
   return (
     <div className="detail-container">
