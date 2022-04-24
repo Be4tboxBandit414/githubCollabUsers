@@ -23,7 +23,7 @@ function Landing(props) {
           5
         </Link>
       </div>
-      <ul type="none">
+      <ul>
         {data.map((user) => (
           <UserCard
             userId={user.id}
