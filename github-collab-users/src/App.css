@@ -35,6 +35,12 @@ a {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1500px) {
+  .nav div {
+    margin-left: 60rem;
+  }
+}
+
 .pages-container {
   margin-left: 6rem;
 }
